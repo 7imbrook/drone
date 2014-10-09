@@ -51,8 +51,8 @@ func LinkGithub(w http.ResponseWriter, r *http.Request, u *User) error {
 	// github OAuth2 Data
 	var oauth = oauth2.Client{
 		RedirectURL:      settings.URL().String() + "/auth/login/github",
-		AccessTokenURL:   "https://" + settings.GitHubDomain + "/login/oauth/access_token",
-		AuthorizationURL: "https://" + settings.GitHubDomain + "/login/oauth/authorize",
+		AccessTokenURL:   "http://" + settings.GitHubDomain + "/login/oauth/access_token",
+		AuthorizationURL: "http://" + settings.GitHubDomain + "/login/oauth/authorize",
 		ClientId:         settings.GitHubKey,
 		ClientSecret:     settings.GitHubSecret,
 	}
